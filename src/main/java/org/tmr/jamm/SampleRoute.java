@@ -2,7 +2,6 @@ package org.tmr.jamm;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.cdi.ContextName;
-//import org.apache.camel.cdi.ContextName;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ejb.Startup;
