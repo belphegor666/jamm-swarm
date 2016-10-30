@@ -15,7 +15,7 @@
         <maven.war.plugin.version>3.0.0</maven.war.plugin.version>
         <swarm.version>2016.10.0</swarm.version>
         <camel.version>2.17.0</camel.version>
-        <failOnMissingWebXml>true</failOnMissingWebXml>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -33,10 +33,12 @@
 
     <dependencies>
         <!-- JBoss swarm -->
+        <!--
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>undertow</artifactId>
         </dependency>
+        -->
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>cdi</artifactId>
@@ -45,27 +47,13 @@
             <groupId>org.wildfly.swarm</groupId>
             <artifactId>ejb</artifactId>
         </dependency>
- 
-        <!-- Apache camel -->
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-core</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
+            <groupId>org.wildfly.swarm</groupId>
             <artifactId>camel-cdi</artifactId>
-            <version>${camel.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-servletlistener</artifactId>
-            <version>${camel.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-servlet</artifactId>
-            <version>${camel.version}</version>
+            <groupId>org.wildfly.swarm</groupId>
+            <artifactId>camel-undertow</artifactId>
         </dependency>
 
         <!-- JEE API -->
@@ -77,19 +65,11 @@
         </dependency>
     </dependencies>
 
-    <!-- comment
-    compile 'com.sun.xml.bind:jaxb-core:2.2.11'
-    compile 'com.sun.xml.bind:jaxb-impl:2.2.11'
-    -->
-
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <failOnMissingWebXml>true</failOnMissingWebXml>
-                </configuration>
                 <version>${maven.war.plugin.version}</version>
             </plugin>
             <plugin>
