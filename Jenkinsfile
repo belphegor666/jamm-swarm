@@ -34,7 +34,7 @@ podTemplate(label: label, serviceAccount: 'jenkins', containers: [
     container(name: 'maven') {
 
       stage 'Build Release'
-      mavenCanaryRelease 
+      mavenCanaryRelease {
         version = canaryVersion
       }
     }
