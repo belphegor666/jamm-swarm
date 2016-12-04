@@ -130,12 +130,13 @@
             <image>
               <name>${project.artifactId}:${project.version}</name>
               <build>
-                <from>jboss/wildfly:9.0.2.Final</from>
+                <from>fabric8/fabric8-java</from>
               </build>
             </image>
           </images>
         </configuration>
       </plugin>
+            
             
             
             
