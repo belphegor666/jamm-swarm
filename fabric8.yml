@@ -1,0 +1,11 @@
+---
+pipeline: "workflows/maven/BuildImage/Jenkinsfile"
+chatRoom: "devops"
+buildName: "jamm-swarm"
+codeReview: false
+links:
+  Current: "http://172.30.235.202:80/kubernetes/pods?namespace=default"
+  Git: "https://github.com/belphegor666/jamm-swarm.git"
+  Job: "http://172.30.20.34:80/job/jamm-swarm"
+environments:
+  Current: "default"
