@@ -26,8 +26,34 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <dependency>
+        <groupId>io.fabric8</groupId>
+        <artifactId>fabric8-arquillian</artifactId>
+        <version>2.2.182</version>
+        <scope>test</scope>
+      </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <profiles>
+    <profile>
+      <id>kit</id>
+      <activation />
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-failsafe-plugin</artifactId>
+            <version>2.19</version>
+            <configuration>
+              <includes>
+                <include>**/*KT.*</include>
+              </includes>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
     <dependencies>
         <!-- JBoss swarm -->
@@ -55,6 +81,11 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+      <groupId>io.fabric8</groupId>
+      <artifactId>fabric8-arquillian</artifactId>
+      <scope>test</scope>
+    </dependency>
     </dependencies>
 
     <reporting>
@@ -94,15 +125,18 @@
         <groupId>io.fabric8</groupId>
         <artifactId>fabric8-maven-plugin</artifactId>
         <version>3.0.35</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>resource</goal>
-              <goal>build</goal>
-            </goals>
-          </execution>
-        </executions>
+        <configuration>
+          <images>
+            <image>
+              <name>${project.artifactId}:${project.version}</name>
+              <build>
+                <from>jboss/wildfly:9.0.2.Final</from>
+              </build>
+            </image>
+          </images>
+        </configuration>
       </plugin>
+            
         </plugins>
         <extensions>
       <extension>
