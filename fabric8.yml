@@ -1,4 +1,5 @@
 ---
+pipeline: "workflows/maven/BuildImage/Jenkinsfile"
 chatRoom: "devops"
 buildName: "jamm-swarm"
 codeReview: false
