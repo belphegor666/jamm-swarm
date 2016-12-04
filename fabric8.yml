@@ -9,3 +9,4 @@ links:
   Job: "http://172.30.20.34:80/job/jamm-swarm"
 environments:
   Current: "default"
+useLocalFlow: true
