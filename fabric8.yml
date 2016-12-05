@@ -1,10 +1,9 @@
 ---
-pipeline: "workflows/maven/BuildImage/Jenkinsfile"
 chatRoom: "devops"
 buildName: "jamm-swarm"
 codeReview: false
 links:
-  Current: "http://172.30.171.44:80/kubernetes/pods?namespace=default"
+  Current: "http://172.30.235.234:80/kubernetes/pods?namespace=default"
   Git: "https://github.com/belphegor666/jamm-swarm.git"
   Job: "http://jenkins.default.localhost/job/jamm-swarm"
 environments:
